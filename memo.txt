@@ -1,0 +1,15 @@
+JAX-RS
+
+http://localhost:8080/JAXRSInspect/
+
+
+覚えておくといつか必ず役に立つ。Javaで簡単Web API作成。- JAX-RS -
+http://qiita.com/ukiuni@github/items/a516439b30c340703292#jax-rs%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E4%B8%8A%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%81%A5%E3%81%91
+https://github.com/ukiuni/JAXRSInspect
+
+JAX-RS入門および実践
+https://backpaper0.github.io/ghosts/jaxrs-getting-started-and-practice.html#1
+
+
+
+https://kinjouj.github.io/2014/04/jaxrs-1.html

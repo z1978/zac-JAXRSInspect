@@ -1,0 +1,69 @@
+<input type="text" id="messageArea" placeholder="message" value="Bush" />
+<button onclick="send()">put message</button>
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function send() {
+		var message = document.getElementById("messageArea").value;
+		if ("" == message) {
+			return;
+		}
+		$.post("api/putMessage", {
+			"message" : message
+		}, function() {
+			alert("posted");
+			document.getElementById("messageArea").value = "";
+		})
+	}
+</script>
+
+
+<button onclick="load()">load message</button>
+<script type="text/javascript">
+	function load() {
+		var message = document.getElementById("messageArea").value;
+		if ("" == message) {
+			return;
+		}
+
+		$.getJSON('api/loadMessages', {
+			id : 001
+		}, function(json) {
+			alert(json[0].id);
+			alert(json[0].message);
+			//此处json就是远程传回的json对象，假设其格式如下：
+			//{'images' : [
+			// {link: images/001.jpg, x :100, y : 100},
+			// {link: images/002.jpg, x : 200, y 200:}
+			//]};
+		});
+		/* 		
+		 $.get('api/loadMessages', {
+		 id      : 'Robin',
+		 password: '123456',
+		 gate    : 'index'
+		 }, function(data, status) {
+		 //data为返回对象，status为请求的状态
+		 alert(data);
+		 //此时假设服务器脚本会返回一段文字"你好，Robin！"，
+		 那么浏览器就会弹出对话框显示该段文字
+		 alert(status);
+		 //结果为success, error等等，但这里是成功时才能运行的函数
+		 }); */
+		/* 		
+		 $.getJSON("api/loadMessages",$("#firstName.val()"),function(jsonData){
+
+		 $("#getJSONResponse").html(jsonData.id);}//无需设置，直接获取的数据类型为json，
+		
+		 );
+		 */
+		/* 
+			$.get("api/loadMessages", {
+				"message" : message
+			}, function(data) {
+				alert(data);
+				document.getElementById("messageArea").value = "";
+			})
+		 */
+	}
+</script>
